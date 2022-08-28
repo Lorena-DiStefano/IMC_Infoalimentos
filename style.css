@@ -3,7 +3,7 @@ body {
     grid-template-rows: 1fr auto;
     min-height: 100vh;
     font-family: 'Raleway', 'DM Sans', sans-serif;
-    background: rgba(108, 112, 116,.5);
+    background-color: #caccce;
 }
 
 h1 {
@@ -16,35 +16,36 @@ h1 {
     margin-bottom: 1em;
 }
 
-.table{
+.table {
     margin: auto;
     width: 98%;
-    color:orange;
-    /* proporciona un comportamiento predeterminado predecible */
+    color: orange;
     table-layout: fixed;
-    border: solid 3px black;   
-    border-collapse: collapse; 
+    border: solid 3px black;
+    border-collapse: collapse;
     bottom: 1em;
 }
 
-thead{    
+thead {
     background-color: black;
     color: orange;
-    text-align: center;        
+    text-align: center;
+    height: 3em;
 }
 
-th,td{
+th,
+td {
     width: 33%;
     padding: 10px;
     font-weight: 600;
-    text-shadow: 2px 2px 2px black;    
+    text-shadow: 2px 2px 2px black;
 }
 
-tbody{
+tbody {
     background-color: rgb(83, 93, 103);
 }
 
-.imc{
+.imc {
     text-align: center;
 }
 
@@ -60,15 +61,15 @@ footer {
 }
 
 @media screen and (min-width:768px) {
-    .table{
+    .table {
         width: 70%;
     }
 
-    footer{
+    footer {
         padding-right: 5em;
     }
 
-    h1{
+    h1 {
         font-size: 2.5em;
     }
 }

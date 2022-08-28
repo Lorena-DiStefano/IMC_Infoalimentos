@@ -1,5 +1,5 @@
 let nombre = prompt("Por favor, ingresa tu nombre")
-const SALUDO = "'HOLA' " +(nombre).toUpperCase()+ "! \nPara poder calcular tu IMC necesitamos conocer tu ALTURA y PESO"
+const SALUDO = "¡HOLA " + (nombre).toUpperCase() + "! \nPara poder calcular tu IMC necesitamos conocer tu ALTURA y PESO"
 alert(SALUDO)
 
 let altura = parseFloat(prompt("Ingresa tu altura expresada en metros" + "\nEjemplo:1.64"))
@@ -35,12 +35,12 @@ if (IMC <= 16) {
                                 alert("Tu IMC es " + IMC + ' e indica: "Obesidad Morvida" ')
                             }
 
-for (let i = 0; i < 3; i++) {
+let opciones
 
-    let opciones = parseInt(prompt("Elije una opción \n 1. ¿Cual es tu rango de peso normal? \n 2. Más Información \n 3. Finalizar"))
+do {
+    opciones = parseInt(prompt("Elije una opción \n 1. ¿Cual es tu rango de peso normal? \n 2. Más Información \n 3. Finalizar"))
 
     switch (opciones) {
-
         case 1:
             alert("Tu peso normal está entre " + MIN.toFixed(2) + " y " + MAX.toFixed(2))
             break
@@ -51,7 +51,8 @@ for (let i = 0; i < 3; i++) {
             alert("Gracias por visitar nuestra página")
             break
     }
-}
+} while (opciones !== 3)
+
 
 
 
