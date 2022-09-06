@@ -2,33 +2,40 @@ body {
     display: grid;
     grid-template-rows: 1fr auto;
     min-height: 100vh;
-    font-family: 'Raleway', 'DM Sans', sans-serif;
-    background-color: #caccce;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(249, 240, 225);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marco {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
 h1 {
-    margin: 2em;
+    font-weight: 700;
     text-align: center;
-    color: orange;
-    font-size: 2em;
-    font-weight: 600;
-    text-shadow: 2px 2px 2px black;
-    margin-bottom: 1em;
+    color: #2e513c;
 }
 
 .table {
-    margin: auto;
     width: 98%;
-    color: orange;
+    color: rgb(6, 72, 33);
     table-layout: fixed;
     border: solid 3px black;
     border-collapse: collapse;
-    bottom: 1em;
 }
 
 thead {
-    background-color: black;
-    color: orange;
+    background-color: #2e513c;
+    color: whitesmoke;
     text-align: center;
     height: 3em;
 }
@@ -37,39 +44,39 @@ th,
 td {
     width: 33%;
     padding: 10px;
-    font-weight: 600;
-    text-shadow: 2px 2px 2px black;
+    font-size: .9em;
+    font-weight: 700;
+    text-align: left;
 }
 
 tbody {
-    background-color: rgb(83, 93, 103);
-}
-
-.imc {
-    text-align: center;
+    background-color: whitesmoke;
 }
 
 footer {
     width: 100%;
     height: 3em;
-    color: orange;
-    text-shadow: 2px 2px 2px black;
+    color: #2e513c;
     text-align: right;
-    padding-right: 2em;
     font-size: .9em;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 @media screen and (min-width:768px) {
+    body {
+        background-image: url(./images/bgtres.jpg);
+        background-size: 100% 100%;
+    }
+
+    .marco {
+        width: 75%;
+        margin-top: 1.5em;
+        background-color: rgb(249, 240, 225);
+        padding: 2.5em 0;
+    }
+
     .table {
-        width: 70%;
-    }
-
-    footer {
-        padding-right: 5em;
-    }
-
-    h1 {
-        font-size: 2.5em;
+        width: 75%;
+        margin-top: 3em;
     }
 }
