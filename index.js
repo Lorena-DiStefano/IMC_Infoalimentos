@@ -14,9 +14,6 @@ function calculador() {
         return pesoNormal
     }
 
-
-
-
     let diagnostico = [
         "Delgadez Extrema",
         "Delgadez Moderada",
@@ -60,9 +57,7 @@ function calculador() {
     }
 
     let opciones
-    const calculationArray=[]
-    
-
+   
     do {
         opciones = parseInt(prompt(crearMenu()))
 
