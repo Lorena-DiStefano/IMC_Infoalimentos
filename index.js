@@ -1,4 +1,5 @@
 let nombre = prompt("Por favor, ingresa tu nombre")
+
 const SALUDO = "¡HOLA " + (nombre).toUpperCase() + "! \nPara poder calcular tu IMC necesitamos conocer tu ALTURA y PESO"
 alert(SALUDO)
 
