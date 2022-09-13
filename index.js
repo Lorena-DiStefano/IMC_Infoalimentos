@@ -85,7 +85,6 @@ do {
             break
         case 4:
             alert("Gracias por visitar nuestra página")
-            console.log(listResultados)
             break
     }
 
