@@ -23,13 +23,13 @@ function crearMenu() {
 const listResultados = []
 
 class Resultado {
-    constructor(valor,clase){
-        this.valor=valor
-        this.clase=clase
+    constructor(valor, clase) {
+        this.valor = valor
+        this.clase = clase
     }
 }
 
-let opciones 
+let opciones
 
 do {
     opciones = parseInt(prompt(crearMenu()))
