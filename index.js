@@ -1,90 +1,41 @@
-const listResultados = []
-class Resultado {
-    constructor(valor, clase, pesoMin, pesoMax) {
-        this.valor = valor
-        this.clase = clase
-        this.pesoMin = pesoMin
-        this.pesoMax = pesoMax
-    }
-}
+const ingresarAltura = document.getElementById('inputAltura')
 
-let listaMenu = [
-    {
-        nombre: "Calcular IMC"
-    },
-    {
-        nombre: "Listá tus resultados!"
-    },
-    {
-        nombre: "Qué debo saber sobre el índice de Quetelet"
-    },
-    {
-        nombre: "Finalizar"
-    },
-]
+let lblAltura = document.createElement('lbl')
+lblAltura.innerHTML = `<label for="inputAlt" class="form_label">Ingresa tu altura expresada en metros  (Ejemplo:1.64)</label>`
+ingresarAltura.append(lblAltura)
+let inputAltura = document.createElement('input')
+inputAltura.innerHTML = `<input type="text" id="altura" placeholder="Ejemplo:1.64" class="form_input">`
+ingresarAltura.append(inputAltura)
 
-const final= document.querySelector('div.menu_btn')
+const ingresarPeso = document.getElementById('inputPeso')
 
-const menu = document.querySelector('#menu')
-const orderList = document.createElement('ol')
-menu.append(orderList)
+let lblPeso = document.createElement('lbl')
+lblPeso.innerHTML = `<label for=inputPeso" class="form_label">Ingresa tu peso expresado en kilogramos\n(Ejemplo:75.2)</label>`
+ingresarPeso.append(lblPeso)
+let inputPeso = document.createElement('input')
+inputPeso.innerHTML = `<input type="text" id="peso" class="form_input" placeholder="Ejemplo:75.2">`
+ingresarPeso.append(inputPeso)
 
-for (let item of listaMenu) {
-    let itemLi = document.createElement('li')
-    itemLi.className = "menu_list"
-    itemLi.innerHTML = `<p>${item.nombre}</p>`
-    orderList.appendChild(itemLi)
-}
+const btnsCalculo = document.getElementById('btnsCalculo')
 
-final.insertAdjacentElement('beforebegin',orderList)
+let btn_calcular = document.createElement('button')
+btn_calcular.type = "button"
+btn_calcular.className = "botones"
+btn_calcular.innerText = "Calcular"
+btnsCalculo.append(btn_calcular)
 
-let menu_input = document.getElementById("menu_input")
-let btn_menu = document.getElementById("btn_menu")
+let btn_newCalc = document.createElement('button')
+btn_newCalc.type = "button"
+btn_newCalc.className = "botones"
+btn_newCalc.innerText = "Nuevo Calculo"
+btnsCalculo.append(btn_newCalc)
 
-let opciones
-btn_menu.onclick = (event) => validarOpcion(event)
-
-function validarOpcion(event) {
+btn_newCalc.onclick = (event) => resetearDatos(event)
+function resetearDatos(event) {
     event.preventDefault()
-    opciones = parseInt(menu_input.value)
+    inputAltura.value = ""
+    inputPeso.value = ""
 
-    if (opciones == 1) {
-        alert("Opción 1: devolverá modal con formulario de cálculo")
-    } else
-        if (opciones == 2) {
-            let result = "Tus Resultados"
-            let counter = 1
-            listResultados.forEach((el) => {
-                result += `\n${counter}. IMC: ${el.valor} - ${el.clase} \nRango de peso Normal: ${el.pesoMin}Kg / ${el.pesoMax}Kg\n`
-                counter++
-                return result
-            })
-            alert(result)
-
-        } else
-            if (opciones == 3) {
-                alert("Opción 3: Modal con información sobre la tabla de Quetelet")
-
-            } else
-                if (opciones == 4) {
-                    alert("Opción 4: Modal con Saludo")
-                } else
-                    alert("Ingresó una opción no válida")
-}
-
-
-let inputAltura = document.querySelector('#inputAltura')
-let inputPeso = document.querySelector('#inputPeso')
-let btn_calcular = document.querySelector('#calcular')
-let btn_newCalc = document.querySelector('#newCalc')
-console.log(btn_newCalc)
-
-btn_newCalc.onclick=(event)=> resetearDatos(event)
-
-function resetearDatos(event){
-    event.preventDefault()
-    document.querySelector('#inputAltura').value=""
-    document.querySelector('#inputPeso').value=""
 }
 
 btn_calcular.onclick = (event) => validarDatos(event)
@@ -117,10 +68,45 @@ function validarDatos(event) {
                             imc >= 30 && imc < 35 ? 5 :
                                 imc >= 35 && imc < 40 ? 6 :
                                     imc >= 40 ? 7 : null
+
     alert(`Tu IMC es de ${imc} e indica ${diagnostico[Type]} \nTu peso normal está entre ${pesoMin}Kg y ${pesoMax}Kg`)
-
+   
     listResultados.push(new Resultado(imc, (diagnostico[Type]), pesoMin, pesoMax))
-
-    console.log(listResultados)
+      
 }
 
+const listResultados = []
+
+class Resultado {
+    constructor(valor, clase, pesoMin, pesoMax) {        
+        this.valor = valor
+        this.clase = clase
+        this.pesoMin = pesoMin
+        this.pesoMax = pesoMax
+    }
+}
+
+const enJson= JSON.stringify(listResultados)
+sessionStorage.setItem("result_ss",enJson)
+
+const btn_resultado = document.getElementById('btn_2')
+
+btn_resultado.onclick = (event) => imprimirResultados(event)
+const resultContent = document.getElementById('result-content')
+ 
+function imprimirResultados() {
+    let count=1
+    listResultados.forEach(element => {
+        let itemL1 = document.createElement('p')
+        itemL1.innerHTML = `${count}. IMC: ${element.valor} = ${element.clase}`
+        count++
+        resultContent.append(itemL1)
+        let itemL2 = document.createElement('p')
+        itemL2.innerHTML = `Peso normal: entre ${element.pesoMin}kg y ${element.pesoMax} kg`
+        resultContent.append(itemL2)
+    });
+} 
+
+const btn_4= document.getElementById('btn_4')
+
+btn_4.onclick=()=>{alert("Gracias por tu visita!")}

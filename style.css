@@ -1,9 +1,10 @@
-body {
+#body {
     display: grid;
     grid-template-rows: 1fr auto;
     min-height: 100vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(249, 240, 225);
+    font-family: 'Roboto', sans-serif;
+    background: url(./images/bguno.jpg) no-repeat fixed;
+    background-size: 100% 100%;
 }
 
 main {
@@ -12,45 +13,37 @@ main {
     align-items: center;
 }
 
-.marco {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-}
-
-h1 {
-    font-weight: 700;
-    text-align: center;
-    color: #2e513c;
-}
-
+/* Menu-Tabla */
 .table {
-    width: 98%;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 1em;
     color: rgb(6, 72, 33);
     table-layout: fixed;
-    border: solid 3px black;
     border-collapse: collapse;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, .8);
 }
 
 thead {
-    background-color: #2e513c;
-    color: whitesmoke;
+    background-color: rgb(116, 170, 127);
+    color: rgb(242, 242, 242);
+    text-shadow: 1px 1px black;
+    font-size: 1.3em;
     text-align: center;
-    height: 3em;
+    height: 2.6em;
 }
 
 th,
 td {
     width: 33%;
     padding: 10px;
-    font-size: .9em;
+    font-size: 1em;
     font-weight: 700;
     text-align: left;
 }
 
 tbody {
-    background-color: whitesmoke;
+    background-color: rgb(242, 242, 242);
 }
 
 footer {
@@ -58,25 +51,123 @@ footer {
     height: 3em;
     color: #2e513c;
     text-align: right;
-    font-size: .9em;
+    font-size: 1.2em;
+    font-weight: 800;
+    padding-right: 2em;
+}
+
+input[type='checkbox'] {
+    display: none;
+}
+
+.btn {
+    background-color: rgba(193, 209, 162, .8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .7);
+    border-radius: 5px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.label {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 1em;
+    color: rgb(242, 242, 242);
+    text-shadow: 1px 1px black;
+    background-color: rgb(73, 108, 76);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+}
+
+.label::before {
+    content: ' ';
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+    color: aqua;
+    margin-right: .7em;
+    transform: translateY(-2px);
+    transition: transform .2s ease-out;
+}
+
+.menu-content {
+    width: 50%;
+    margin: 0 auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+}
+
+.content {
+    background-color: rgba(193, 209, 162, .7);
+    padding: .5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
+
+.button:checked+.label+.menu-content {
+    max-height: 100vh;
+    overflow: visible;
+}
+
+.button:checked+.label::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+
+/* Calcular */
+
+.modal-content {
+    background: url(./images/bguno-a.jpg);
+    padding: 2px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+}
+
+.modal-header,
+.modal-footer {
+    color: #f2f2f2;
+    text-shadow: 1px 1px black;
+    background-color: rgb(73, 108, 76);
+}
+
+.modal-body {
+    color: #121b13;
+    font-weight: 500;
+}
+
+.botones {
+    margin: 8px;
+    background-color: rgba(222, 237, 191, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .7);
+    border-radius: 5px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+/* Resultados - Info */
+.offcanvas-start,
+.offcanvas-end {
+    background: url(./images/bguno-a.jpg);
+    font-size: 1.3em;
+}
+
+span {
     font-weight: 800;
 }
 
-@media screen and (min-width:768px) {
-    body {
-        background-image: url(./images/bgtres.jpg);
-        background-size: 100% 100%;
-    }
+.offcanvas-start h5,
+.offcanvas-end h5 {
+    font-size: 2em;
+}
 
-    .marco {
-        width: 75%;
-        margin-top: 1.5em;
-        background-color: rgb(249, 240, 225);
-        padding: 2.5em 0;
-    }
-
-    .table {
-        width: 75%;
-        margin-top: 3em;
-    }
+.result {
+    margin: 0 auto;
 }
