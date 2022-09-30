@@ -133,12 +133,12 @@ input[type='checkbox'] {
     padding: 2px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 .modal-header,
 .modal-footer {
-    color: #f2f2f2;
+    color: #f2f2f2;    
     text-shadow: 1px 1px black;
     background-color: rgb(73, 108, 76);
 }
@@ -149,11 +149,10 @@ input[type='checkbox'] {
 }
 
 .botones {
-    margin: 8px;
-    background-color: rgba(222, 237, 191, 0.8);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .7);
-    border-radius: 5px;
-    font-weight: 500;
+    text-align: center;
+    background-color: rgba(222, 237, 191, 0.8);   
+    border-radius: 4px;
+    padding: 0 10px;
     margin: 5px;
 }
 

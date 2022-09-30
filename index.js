@@ -1,7 +1,7 @@
 const ingresarAltura = document.getElementById('inputAltura')
 
 let lblAltura = document.createElement('lbl')
-lblAltura.innerHTML = `<label for="inputAlt" class="form_label">Ingresa tu altura expresada en metros  (Ejemplo: 1.64)</label>`
+lblAltura.innerHTML = `<label for="inputAlt" class="form_label">Ingresa tu altura expresada en metros\n(Ejemplo: 1.64)</label>`
 ingresarAltura.append(lblAltura)
 let inputAltura = document.createElement('input')
 inputAltura.innerHTML = `<input type="text" id="altura" placeholder="Ejemplo: 1.64" class="form_input">`
@@ -108,6 +108,7 @@ let listResulados2 = ""
 
 
 function imprimirResultados() {
+    resultContent.innerHTML=""
     listResulados2 = JSON.parse(sessionStorage.getItem('result_ss'))
     let count = 1
     listResultados.forEach(element => {
@@ -126,16 +127,12 @@ const btn_4 = document.getElementById('btn_4')
 btn_4.onclick = () => {
     Swal.fire({
         showClass: {
-            //popup: 'animate__animated animate__fadeInDown'
             popup: 'swal2-show',
             backdrop: 'swal2-backdrop-show',
             icon: 'swal2-icon-show' 
         },
-        hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
-        },
         title: 'Muchas Gracias\npor visitarnos!!\n&#x1F60A',
-  
+        borderradius: '5px',       
         background: 'url(./images/bguno-b.jpg)',
         showConfirmButton: false,
         timer: 2000
