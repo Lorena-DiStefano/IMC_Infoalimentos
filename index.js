@@ -1,19 +1,19 @@
 const ingresarAltura = document.getElementById('inputAltura')
 
 let lblAltura = document.createElement('lbl')
-lblAltura.innerHTML = `<label for="inputAlt" class="form_label">Ingresa tu altura expresada en metros  (Ejemplo:1.64)</label>`
+lblAltura.innerHTML = `<label for="inputAlt" class="form_label">Ingresa tu altura expresada en metros  (Ejemplo: 1.64)</label>`
 ingresarAltura.append(lblAltura)
 let inputAltura = document.createElement('input')
-inputAltura.innerHTML = `<input type="text" id="altura" placeholder="Ejemplo:1.64" class="form_input">`
+inputAltura.innerHTML = `<input type="text" id="altura" placeholder="Ejemplo: 1.64" class="form_input">`
 ingresarAltura.append(inputAltura)
 
 const ingresarPeso = document.getElementById('inputPeso')
 
 let lblPeso = document.createElement('lbl')
-lblPeso.innerHTML = `<label for=inputPeso" class="form_label">Ingresa tu peso expresado en kilogramos\n(Ejemplo:75.2)</label>`
+lblPeso.innerHTML = `<label for=inputPeso" class="form_label">Ingresa tu peso expresado en kilogramos\n(Ejemplo: 75.2)</label>`
 ingresarPeso.append(lblPeso)
 let inputPeso = document.createElement('input')
-inputPeso.innerHTML = `<input type="text" id="peso" class="form_input" placeholder="Ejemplo:75.2">`
+inputPeso.innerHTML = `<input type="text" id="peso" class="form_input" placeholder="Ejemplo: 75.2">`
 ingresarPeso.append(inputPeso)
 
 const btnsCalculo = document.getElementById('btnsCalculo')
@@ -35,7 +35,6 @@ function resetearDatos(event) {
     event.preventDefault()
     inputAltura.value = ""
     inputPeso.value = ""
-
 }
 
 btn_calcular.onclick = (event) => validarDatos(event)
@@ -69,16 +68,28 @@ function validarDatos(event) {
                                 imc >= 35 && imc < 40 ? 6 :
                                     imc >= 40 ? 7 : null
 
-    alert(`Tu IMC es de ${imc} e indica ${diagnostico[Type]} \nTu peso normal está entre ${pesoMin}Kg y ${pesoMax}Kg`)
-   
+    Swal.fire({
+        position: 'top-end',
+        text: `Tu IMC es de ${imc} e indica ${diagnostico[Type]} \nTu peso normal está entre ${pesoMin}Kg y ${pesoMax}Kg`,
+        padding:'1em',
+        background: 'url(./images/bguno-b.jpg) no-repeat',
+        showConfirmButtonColor: true,
+        confirmButtonText: 'ok!',
+        confirmButtonColor: '#91af7b',
+    })
+
     listResultados.push(new Resultado(imc, (diagnostico[Type]), pesoMin, pesoMax))
-      
+
+    const resultInStorage = JSON.stringify(listResultados)
+    sessionStorage.setItem("result_ss", resultInStorage)
 }
+
+
 
 const listResultados = []
 
 class Resultado {
-    constructor(valor, clase, pesoMin, pesoMax) {        
+    constructor(valor, clase, pesoMin, pesoMax) {
         this.valor = valor
         this.clase = clase
         this.pesoMin = pesoMin
@@ -86,16 +97,19 @@ class Resultado {
     }
 }
 
-const enJson= JSON.stringify(listResultados)
-sessionStorage.setItem("result_ss",enJson)
-
 const btn_resultado = document.getElementById('btn_2')
 
 btn_resultado.onclick = (event) => imprimirResultados(event)
 const resultContent = document.getElementById('result-content')
- 
+
+const btnCerrarResultados = document.getElementById('btn_close_result')
+console.log(btnCerrarResultados)
+let listResulados2 = ""
+
+
 function imprimirResultados() {
-    let count=1
+    listResulados2 = JSON.parse(sessionStorage.getItem('result_ss'))
+    let count = 1
     listResultados.forEach(element => {
         let itemL1 = document.createElement('p')
         itemL1.innerHTML = `${count}. IMC: ${element.valor} = ${element.clase}`
@@ -105,8 +119,25 @@ function imprimirResultados() {
         itemL2.innerHTML = `Peso normal: entre ${element.pesoMin}kg y ${element.pesoMax} kg`
         resultContent.append(itemL2)
     });
-} 
+}
 
-const btn_4= document.getElementById('btn_4')
+const btn_4 = document.getElementById('btn_4')
 
-btn_4.onclick=()=>{alert("Gracias por tu visita!")}
+btn_4.onclick = () => {
+    Swal.fire({
+        showClass: {
+            //popup: 'animate__animated animate__fadeInDown'
+            popup: 'swal2-show',
+            backdrop: 'swal2-backdrop-show',
+            icon: 'swal2-icon-show' 
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        },
+        title: 'Muchas Gracias\npor visitarnos!!\n&#x1F60A',
+  
+        background: 'url(./images/bguno-b.jpg)',
+        showConfirmButton: false,
+        timer: 2000
+    })
+}
