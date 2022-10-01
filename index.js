@@ -1,19 +1,25 @@
 const ingresarAltura = document.getElementById('inputAltura')
 
 let lblAltura = document.createElement('lbl')
-lblAltura.innerHTML = `<label for="inputAlt" class="form_label">Ingresa tu altura expresada en metros\n(Ejemplo: 1.64)</label>`
+lblAltura.innerHTML = `<label for="inputAlt" class="form_label">Ingresa tu altura expresada en metros.</label>`
 ingresarAltura.append(lblAltura)
 let inputAltura = document.createElement('input')
-inputAltura.innerHTML = `<input type="text" id="altura" placeholder="Ejemplo: 1.64" class="form_input">`
+inputAltura.type = "text"
+inputAltura.id = "altura"
+inputAltura.placeholder = "Ejemplo: 1.64"
+inputAltura.className = "form_input"
 ingresarAltura.append(inputAltura)
 
 const ingresarPeso = document.getElementById('inputPeso')
 
 let lblPeso = document.createElement('lbl')
-lblPeso.innerHTML = `<label for=inputPeso" class="form_label">Ingresa tu peso expresado en kilogramos\n(Ejemplo: 75.2)</label>`
+lblPeso.innerHTML = `<label for=inputPeso" class="form_label">Ingresa tu peso expresado en kilogramos.</label>`
 ingresarPeso.append(lblPeso)
 let inputPeso = document.createElement('input')
-inputPeso.innerHTML = `<input type="text" id="peso" class="form_input" placeholder="Ejemplo: 75.2">`
+inputPeso.type = "text"
+inputPeso.id = "altura"
+inputPeso.placeholder = "Ejemplo: 75.2"
+inputPeso.className = "form_input"
 ingresarPeso.append(inputPeso)
 
 const btnsCalculo = document.getElementById('btnsCalculo')
@@ -71,8 +77,8 @@ function validarDatos(event) {
     Swal.fire({
         position: 'top-end',
         text: `Tu IMC es de ${imc} e indica ${diagnostico[Type]} \nTu peso normal está entre ${pesoMin}Kg y ${pesoMax}Kg`,
-        padding:'1em',
-        background: 'url(./images/bguno-b.jpg) no-repeat',
+        padding: '1em',
+        background: 'url(./images/bguno-d.jpg) no-repeat',
         showConfirmButtonColor: true,
         confirmButtonText: 'ok!',
         confirmButtonColor: '#91af7b',
@@ -108,7 +114,7 @@ let listResulados2 = ""
 
 
 function imprimirResultados() {
-    resultContent.innerHTML=""
+    resultContent.innerHTML = ""
     listResulados2 = JSON.parse(sessionStorage.getItem('result_ss'))
     let count = 1
     listResultados.forEach(element => {
@@ -129,12 +135,13 @@ btn_4.onclick = () => {
         showClass: {
             popup: 'swal2-show',
             backdrop: 'swal2-backdrop-show',
-            icon: 'swal2-icon-show' 
+            icon: 'swal2-icon-show'
         },
-        title: 'Muchas Gracias\npor visitarnos!!\n&#x1F60A',
-        borderradius: '5px',       
-        background: 'url(./images/bguno-b.jpg)',
+        title: 'Muchas Gracias\npor visitarnos &#10084 !!!',
+        borderradius: '5px',
+        background: 'url(./images/bguno-d.jpg)',
         showConfirmButton: false,
         timer: 2000
     })
 }
+
