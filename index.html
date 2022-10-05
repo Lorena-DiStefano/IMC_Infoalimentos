@@ -32,8 +32,7 @@
             <button class="btn" id="btn_2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft"
               aria-controls="offcanvasLeft">Lista de Resultados</button>
             </button>
-            <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight">Lo que debes saber</button>
+            <button type="button" id="btn_3" class="btn">Lo que debes saber</button>
             <button type="button" id="btn_4" class="btn">Finalizar</button>
           </div>
         </div>
@@ -94,13 +93,12 @@
               <h3 class="modal-title" id="calc-title">Calculadora</h3>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              <div id="inputAltura"></div>
-              <div id="inputPeso"></div>
+            <div class="modal-body" id="datos">
+             <div id="inputAltura"></div> 
+             <div id="inputPeso"></div> 
             </div>
-            <div class="modal-footer">
-              <div id="btnsCalculo">
-              </div>
+            <div class="modal-footer" id="btnsCalculo">
+             
             </div>
           </div>
         </div>
@@ -117,24 +115,7 @@
         </div>
       </div>
       </div>
-    </section>
-    <section class="informacion">
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-          <h5 id="offcanvasRightLabel">Tabla o Indice de Quetelet</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <p>Fue creada en <span>1832.</span></p>
-          <p>No contempla edad, género, porcentaje de grasa corporal o masa muscular.</p>
-          <p>Considerando que el criterio sobre <span>"La Belleza"</span> varía según la época y las culturas,
-            te propongo que hablemos de <span>"SALUD".</span></p>
-          <p>No confundamos <span>"buena salud"</span> con una cuestión de <span>"estética".</span></p>
-          <p>Realizando chequeos periódicos, obtendrás información certera sobre lo que tu organismo necesita.</p>
-        </div>
-      </div>
-    </section>
-
+    </section>   
   </main>
   <footer>
     <p>&#169; by Lorena Di Stefano - 2022</p>
@@ -144,6 +125,7 @@
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.35/dist/sweetalert2.all.min.js"></script>
+  <script src="./dom.js"></script>
   <script src="./index.js"></script>
 </body>
 

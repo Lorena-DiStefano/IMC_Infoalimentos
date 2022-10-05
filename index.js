@@ -1,53 +1,22 @@
-const ingresarAltura = document.getElementById('inputAltura')
+let inputAlt = document.getElementById('altura')
+let inputPeso = document.getElementById('peso')
 
-let lblAltura = document.createElement('lbl')
-lblAltura.innerHTML = `<label for="inputAlt" class="form_label">Ingresa tu altura expresada en metros.</label>`
-ingresarAltura.append(lblAltura)
-let inputAltura = document.createElement('input')
-inputAltura.type = "text"
-inputAltura.id = "altura"
-inputAltura.placeholder = "Ejemplo: 1.64"
-inputAltura.className = "form_input"
-ingresarAltura.append(inputAltura)
-
-const ingresarPeso = document.getElementById('inputPeso')
-
-let lblPeso = document.createElement('lbl')
-lblPeso.innerHTML = `<label for=inputPeso" class="form_label">Ingresa tu peso expresado en kilogramos.</label>`
-ingresarPeso.append(lblPeso)
-let inputPeso = document.createElement('input')
-inputPeso.type = "text"
-inputPeso.id = "altura"
-inputPeso.placeholder = "Ejemplo: 75.2"
-inputPeso.className = "form_input"
-ingresarPeso.append(inputPeso)
-
-const btnsCalculo = document.getElementById('btnsCalculo')
-
-let btn_calcular = document.createElement('button')
-btn_calcular.type = "button"
-btn_calcular.className = "botones"
-btn_calcular.innerText = "Calcular"
-btnsCalculo.append(btn_calcular)
-
-let btn_newCalc = document.createElement('button')
-btn_newCalc.type = "button"
-btn_newCalc.className = "botones"
-btn_newCalc.innerText = "Nuevo Calculo"
-btnsCalculo.append(btn_newCalc)
+const btn_newCalc = document.getElementById('newCalc')
 
 btn_newCalc.onclick = (event) => resetearDatos(event)
 function resetearDatos(event) {
     event.preventDefault()
-    inputAltura.value = ""
+    inputAlt.value = ""
     inputPeso.value = ""
 }
+
+const btn_calcular = document.getElementById('calcular')
 
 btn_calcular.onclick = (event) => validarDatos(event)
 
 function validarDatos(event) {
     event.preventDefault()
-    let altura = parseFloat(inputAltura.value).toFixed(2)
+    let altura = parseFloat(inputAlt.value).toFixed(2)
     let peso = parseFloat(inputPeso.value).toFixed(2)
     let imc = (peso / Math.pow(altura, 2)).toFixed(2)
     let pesoMin = (Math.pow(altura, 2) * 18.5).toFixed(2)
@@ -75,13 +44,17 @@ function validarDatos(event) {
                                     imc >= 40 ? 7 : null
 
     Swal.fire({
+        customClass: {
+            container: 'mje_container',
+        },
+        html: `<div class="div_mje">
+        <p class="resultado">Tu IMC es de ${imc} e indica ${diagnostico[Type]}<br><br>Rango de peso normal: ${pesoMin}Kg a ${pesoMax}Kg</p>` +
+            '</div>',
         position: 'top-end',
-        text: `Tu IMC es de ${imc} e indica ${diagnostico[Type]} \nTu peso normal está entre ${pesoMin}Kg y ${pesoMax}Kg`,
-        padding: '1em',
-        background: 'url(./images/bguno-d.jpg) no-repeat',
-        showConfirmButtonColor: true,
-        confirmButtonText: 'ok!',
-        confirmButtonColor: '#91af7b',
+        //padding: '1em',
+        showConfirmButton: false,
+        background: 'url(./images/bguno-b.jpg) no-repeat',
+        backdrop: true,
     })
 
     listResultados.push(new Resultado(imc, (diagnostico[Type]), pesoMin, pesoMax))
@@ -89,8 +62,6 @@ function validarDatos(event) {
     const resultInStorage = JSON.stringify(listResultados)
     sessionStorage.setItem("result_ss", resultInStorage)
 }
-
-
 
 const listResultados = []
 
@@ -109,7 +80,7 @@ btn_resultado.onclick = (event) => imprimirResultados(event)
 const resultContent = document.getElementById('result-content')
 
 const btnCerrarResultados = document.getElementById('btn_close_result')
-console.log(btnCerrarResultados)
+
 let listResulados2 = ""
 
 
@@ -128,20 +99,45 @@ function imprimirResultados() {
     });
 }
 
+const btn_3 = document.getElementById('btn_3')
+
+btn_3.onclick = () => {
+    Swal.fire({
+        customClass: {
+            container: 'mje_container',
+            closeButton: 'closeButton'
+        },
+        html: //'<div class="div_info">' +
+            '<h2 class="info_title">Tabla o Indice de Quetelet</h2>' +
+            //'<div class="info_text">' +
+            '<p class="info_text">Fue creada en 1832.<br>No contempla edad, género, porcentaje de grasa corporal o masa muscular.</p>' +
+            '<p class="info_text">Considerando que el criterio sobre <b>"La Belleza"</b> varía según la época y las culturas....<br>Mejor hablemos de <b>"SALUD!!"</b></p>' +
+            '<p class="info_text">No confundamos <b>"Buena Salud"</b> con cuestiones de <b>"Estética".</b><br>Realizando chequeos periódicos, obtendrás información certera sobre lo que tu organismo necesita.</p>',
+        //'</div>' ,
+        //'</div>',
+        //showCloseButton: true,
+        background: 'url(./images/bguno.jpg)',
+        showConfirmButton: false,
+        backdrop: true,
+    })
+}
+
+
 const btn_4 = document.getElementById('btn_4')
 
 btn_4.onclick = () => {
     Swal.fire({
-        showClass: {
-            popup: 'swal2-show',
-            backdrop: 'swal2-backdrop-show',
-            icon: 'swal2-icon-show'
+        customClass: {
+            container: 'mje_container',
         },
-        title: 'Muchas Gracias\npor visitarnos &#10084 !!!',
-        borderradius: '5px',
-        background: 'url(./images/bguno-d.jpg)',
+        html: '<div class="div_mje">' +
+            '<p class="mje">Muchas Gracias <br>por tu visita!! &#10084</p>' +
+            '</div>',
+        background: 'url(./images/bguno-b.jpg) no-repeat',
+        padding: '1em',
         showConfirmButton: false,
-        timer: 2000
+        timer: 2000,
+        backdrop: true,
     })
 }
 
