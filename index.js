@@ -51,7 +51,6 @@ function validarDatos(event) {
         <p class="resultado">Tu IMC es de ${imc} e indica ${diagnostico[Type]}<br><br>Rango de peso normal: ${pesoMin}Kg a ${pesoMax}Kg</p>` +
             '</div>',
         position: 'top-end',
-        //padding: '1em',
         showConfirmButton: false,
         background: 'url(./images/bguno-b.jpg) no-repeat',
         backdrop: true,
@@ -76,15 +75,13 @@ class Resultado {
 
 const btn_resultado = document.getElementById('btn_2')
 
+const resultContent = document.getElementById('resultContent')
 btn_resultado.onclick = (event) => imprimirResultados(event)
-const resultContent = document.getElementById('result-content')
-
-const btnCerrarResultados = document.getElementById('btn_close_result')
 
 let listResulados2 = ""
 
-
 function imprimirResultados() {
+    (modalResult.showModal())
     resultContent.innerHTML = ""
     listResulados2 = JSON.parse(sessionStorage.getItem('result_ss'))
     let count = 1
@@ -99,39 +96,25 @@ function imprimirResultados() {
     });
 }
 
-const btn_3 = document.getElementById('btn_3')
+const closeResult = document.getElementById('closeResult')
+closeResult.onclick = () => { (modalResult.close()) }
 
-btn_3.onclick = () => {
-    Swal.fire({
-        customClass: {
-            container: 'mje_container',
-            closeButton: 'closeButton'
-        },
-        html: //'<div class="div_info">' +
-            '<h2 class="info_title">Tabla o Indice de Quetelet</h2>' +
-            //'<div class="info_text">' +
-            '<p class="info_text">Fue creada en 1832.<br>No contempla edad, género, porcentaje de grasa corporal o masa muscular.</p>' +
-            '<p class="info_text">Considerando que el criterio sobre <b>"La Belleza"</b> varía según la época y las culturas....<br>Mejor hablemos de <b>"SALUD!!"</b></p>' +
-            '<p class="info_text">No confundamos <b>"Buena Salud"</b> con cuestiones de <b>"Estética".</b><br>Realizando chequeos periódicos, obtendrás información certera sobre lo que tu organismo necesita.</p>',
-        //'</div>' ,
-        //'</div>',
-        //showCloseButton: true,
-        background: 'url(./images/bguno.jpg)',
-        showConfirmButton: false,
-        backdrop: true,
-    })
-}
+const btn_info = document.getElementById('btn_3')
+btn_info.onclick=()=>{(modalInfo.showModal())}
 
+const closeInfo = document.getElementById('closeInfo')
+closeInfo.onclick = () => { (modalInfo.close()) }
 
-const btn_4 = document.getElementById('btn_4')
+const btn_saludo = document.getElementById('btn_4')
 
-btn_4.onclick = () => {
+btn_saludo.onclick = () => {
     Swal.fire({
         customClass: {
             container: 'mje_container',
         },
-        html: '<div class="div_mje">' +
-            '<p class="mje">Muchas Gracias <br>por tu visita!! &#10084</p>' +
+        html:
+            '<div class="div_mje">' +
+            '<p class="mje">Muchas Gracias <br>por tu visita!! <i class="bi bi-heart-pulse-fill"></i></p>' +
             '</div>',
         background: 'url(./images/bguno-b.jpg) no-repeat',
         padding: '1em',
