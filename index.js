@@ -110,7 +110,7 @@ btn_api.onclick=()=>{
     Swal.fire({
         title:'Si quieres conocer más sobre las propiedades de los alimentos',
         showConfirmButton: false,
-        footer: '<a class"linkApi" href="api.html" target="blank">Haz click para obtener más información</a>',
+        footer: '<a class"linkApi" href="./api_alimentos/api.html" target="blank">Haz click para obtener más información</a>',
         timer: 5000,
     })
 }
