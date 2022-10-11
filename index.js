@@ -47,7 +47,8 @@ function validarDatos(event) {
         customClass: {
             container: 'mje_container',
         },
-        html: `<div class="div_mje">
+        html: `
+        <div class="div_mje">
         <p class="resultado">Tu IMC es de ${imc} e indica ${diagnostico[Type]}<br><br>Rango de peso normal: ${pesoMin}Kg a ${pesoMax}Kg</p>` +
             '</div>',
         position: 'top-end',
@@ -87,12 +88,9 @@ function imprimirResultados() {
     let count = 1
     listResultados.forEach(element => {
         let itemL1 = document.createElement('p')
-        itemL1.innerHTML = `${count}. IMC: ${element.valor} = ${element.clase}`
+        itemL1.innerHTML = `${count}. IMC: ${element.valor} = ${element.clase}<br>Peso normal: entre ${element.pesoMin}kg y ${element.pesoMax} kg`
         count++
-        resultContent.append(itemL1)
-        let itemL2 = document.createElement('p')
-        itemL2.innerHTML = `Peso normal: entre ${element.pesoMin}kg y ${element.pesoMax} kg`
-        resultContent.append(itemL2)
+        resultContent.append(itemL1)      
     });
 }
 
@@ -100,18 +98,27 @@ const closeResult = document.getElementById('closeResult')
 closeResult.onclick = () => { (modalResult.close()) }
 
 const btn_info = document.getElementById('btn_3')
-btn_info.onclick=()=>{(modalInfo.showModal())}
+btn_info.onclick = () => { (modalInfo.showModal()) }
 
 const closeInfo = document.getElementById('closeInfo')
 closeInfo.onclick = () => { (modalInfo.close()) }
 
-const btn_saludo = document.getElementById('btn_4')
+
+const btn_api = document.getElementById('btn_4')
+
+btn_api.onclick=()=>{
+    Swal.fire({
+        title:'Si quieres conocer más sobre las propiedades de los alimentos',
+        showConfirmButton: false,
+        footer: '<a class"linkApi" href="api.html" target="blank">Haz click para obtener más información</a>',
+        timer: 5000,
+    })
+}
+
+const btn_saludo = document.getElementById('btn_5')
 
 btn_saludo.onclick = () => {
     Swal.fire({
-        customClass: {
-            container: 'mje_container',
-        },
         html:
             '<div class="div_mje">' +
             '<p class="mje">Muchas Gracias <br>por tu visita!! <i class="bi bi-heart-pulse-fill"></i></p>' +

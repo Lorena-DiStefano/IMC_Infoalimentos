@@ -1,7 +1,7 @@
 /* font-family: 'DM Sans', sans-serif;
 font-family: 'Roboto', sans-serif; */
 
-#body {
+.body {
     display: grid;
     grid-template-rows: 1fr auto;
     min-height: 100vh;
@@ -67,9 +67,15 @@ input[type='checkbox'] {
 .btnMenu {
     background-color: rgba(193, 209, 162, .8);
     box-shadow: 0 2px 4px rgba(0, 0, 0, .7);
+    border: none;
     border-radius: 5px;
     font-weight: 500;
     margin: 5px;
+}
+
+.btnMenu:hover {
+    background-color: #2e513c;
+    color: rgb(242, 242, 242);
 }
 
 .label {
@@ -82,7 +88,7 @@ input[type='checkbox'] {
     padding: 1em;
     color: rgb(242, 242, 242);
     text-shadow: 1px 1px black;
-    background-color: rgb(73, 108, 76);
+    background-color: #2e513c;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 1);
     cursor: pointer;
     transition: all 0.25s ease-out;
@@ -128,21 +134,19 @@ input[type='checkbox'] {
 
 /* Calcular */
 .modal-content {
-    background: url(./images/bguno-e.jpg);
-    padding: 2px;
+    background: url(./images/bguno.jpg);
+    color: #121b13;
+    font-weight: 500;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
     font-size: 1.2em;
 }
 
-.modal-header,
-.modal-footer {
-    color: #f2f2f2;
-    text-shadow: 1px 1px black;
-    background-color: rgb(73, 108, 76);
-}
-
 .modal-body {
+    background: url(./images/bguno-c.jpg);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
     color: #121b13;
     font-weight: 500;
 }
@@ -157,20 +161,6 @@ input[type='checkbox'] {
 
 
 /* SWEETALERTS */
-.info_title {
-    padding: 10px;
-    background: url(./images/bguno-c2.jpg)
-}
-
-.info_text {
-    font-family: 'DM Sans', 'Roboto', sans-serif;
-    font-size: 1em;
-    text-align: left;
-    color: #2e513c;
-    margin-top: 1em;
-    padding: 10px;
-    background: url(./images/bguno-c2.jpg);
-}
 
 .div_mje {
     background: url(./images/bguno-c2.jpg);
@@ -184,12 +174,14 @@ input[type='checkbox'] {
     font-size: 1.4em;
     color: #2e513c;
     padding: .5em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .8);
 }
 
 /* MODALES */
 .div_modal {
     background: url(./images/bguno.jpg) no-repeat;
     background-size: 100% 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .8);
     border: none;
     border-radius: 10px;
 }
@@ -208,8 +200,9 @@ input[type='checkbox'] {
     }
 }
 
-.modalContent {
-    background: url(./images/bguno-c2.jpg);
+.modalContent p {
+    background: url(./images/bguno-c.jpg)no-repeat;
+    background-size: 100% 100%;
     padding: 8px;
     font-size: 1em;
     border-radius: 5px;
@@ -226,7 +219,7 @@ input[type='checkbox'] {
     font-weight: 500;
 }
 
-.btnClose {
+.btnsPopup {
     border: none;
     background-color: transparent;
     padding: 5px;
@@ -234,18 +227,22 @@ input[type='checkbox'] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, .8);
     margin-top: 5px;
     font-weight: 600;
+}
+
+.btnClose {
     float: right;
 }
 
 /* MEDIA QUERY */
 
 @media screen and (min-width:375px) {
-    .modalContent {        
-        font-size: 1.2em;        
-    } 
+    .modalContent {
+        font-size: 1.2em;
+    }
 }
 
 @media screen and (min-width:760px) {
+
     .table,
     .label,
     .menu-content {
@@ -255,6 +252,11 @@ input[type='checkbox'] {
     thead {
         font-size: 1.3em;
     }
+
+    .div_modal {
+        max-width: 60%;
+    }
+
 }
 
 @media screen and (min-width:1000px) {

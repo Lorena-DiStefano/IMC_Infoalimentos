@@ -1,3 +1,7 @@
+
+
+
+//===SECTION CALCULADORA===
 const ingresaDatos = document.getElementById('datos')
 
 let ingrAltura = document.createElement('div')
@@ -17,10 +21,11 @@ ingresaDatos.append(ingrPeso)
 const btnsCalculo = document.getElementById('btnsCalculo')
 footer_form = document.createElement('div')
 footer_form.innerHTML = `
-<button type="button" id="calcular" class="botones">Calcular</button>
-<button type="button" id="newCalc" class="botones">Nuevo Cálculo</button>`
+<button type="button" id="calcular" class="btnsPopup">Calcular</button>
+<button type="button" id="newCalc" class="btnsPopup">Nuevo Cálculo</button>`
 btnsCalculo.append(footer_form)
 
+//===SECTION RESULTADOS===
 const resultados = document.querySelector('.resultados')
 
 const divModal_result = document.createElement('dialog')
@@ -31,8 +36,10 @@ divModal_result.innerHTML=`
 <h2 class="modal_title">Tus resultados</h2>
 </div>
 <div id="resultContent" class="modalContent"></div>
-<button type="button" class="btnClose" id="closeResult">Cerrar</button>`
+<button type="button" class="btnsPopup btnClose" id="closeResult">Cerrar</button>`
 resultados.append(divModal_result)
+
+//===SECTION INFO===
 
 const info = document.querySelector('.info')
 
@@ -47,6 +54,8 @@ divModal_info.innerHTML=`
 <p class="info_text">Considerando que el criterio sobre <b>"La Belleza"</b> varía según la época y las culturas....    Mejor hablemos de <b>"SALUD!!"</b></p>
 <p class="info_text">No confundamos <b>"Buena Salud"</b> con cuestiones de <b>"Estética".</b><br>Realizando chequeos periódicos, obtendrás información certera sobre lo que tu organismo necesita.</p>
 </div>
-<button type="button" class="btnClose" id="closeInfo">Cerrar</button>
+<button type="button" class="btnsPopup btnClose" id="closeInfo">Cerrar</button>
 </div>`
 info.append(divModal_info)
+
+//===SECTION API===
