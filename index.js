@@ -99,18 +99,14 @@ btn_info.onclick = () => { (modalInfo.showModal()) }
 const closeInfo = document.getElementById('closeInfo')
 closeInfo.onclick = () => { (modalInfo.close()) }
 
-
 const btn_api = document.getElementById('btn_4')
-
 btn_api.onclick = (event) => { apiHtml(event) }
 
-
 function apiHtml() {
-    window.open("./api_alimentos/api.html")    
+    window.open("./api_alimentos/api.html")
 }
 
 const btn_saludo = document.getElementById('btn_5')
-
 btn_saludo.onclick = () => {
     Swal.fire({
         html:
