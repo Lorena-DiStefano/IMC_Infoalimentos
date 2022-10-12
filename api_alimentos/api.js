@@ -1,3 +1,8 @@
+
+
+
+
+
 const cargarAlimentos = async () => {
     try {
         const respuesta = await fetch(`https://633e2789c235b0e5751fb150.mockapi.io/alimentos`)
@@ -12,9 +17,9 @@ const cargarAlimentos = async () => {
             alimentos.className = "cardAlimento"
             alimentos.innerHTML = `
                 <div class="card_content">
-                <img class="foto" src="${alimento.foto}")>
-                <h3 class="card_title">${alimento.nombre}</h3>
-                <div class="contPropiedades"><p>${alimento.propiedades}</p></div>
+                <img class="foto" src="${alimento.image}")>                
+                <h3 class="card_title">${alimento.food}</h3>
+                <div class="contPropiedades"><p>${alimento.benefits}</p></div>                    
                 </div>`
 
             contenedor.append(alimentos)

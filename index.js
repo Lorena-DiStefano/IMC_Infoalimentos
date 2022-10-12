@@ -44,13 +44,9 @@ function validarDatos(event) {
                                     imc >= 40 ? 7 : null
 
     Swal.fire({
-        customClass: {
-            container: 'mje_container',
-        },
-        html: `
-        <div class="div_mje">
-        <p class="resultado">Tu IMC es de ${imc} e indica ${diagnostico[Type]}<br><br>Rango de peso normal: ${pesoMin}Kg a ${pesoMax}Kg</p>` +
-            '</div>',
+        html: `             
+        <div class="div_mje"><p>Tu IMC es de ${imc} e indica ${diagnostico[Type]}</p></div>
+        <div class="div_mje"><p>Rango de peso normal: ${pesoMin}Kg a ${pesoMax}Kg</p></div>`,
         position: 'top-end',
         showConfirmButton: false,
         background: 'url(./images/bguno-b.jpg) no-repeat',
@@ -90,7 +86,7 @@ function imprimirResultados() {
         let itemL1 = document.createElement('p')
         itemL1.innerHTML = `${count}. IMC: ${element.valor} = ${element.clase}<br>Peso normal: entre ${element.pesoMin}kg y ${element.pesoMax} kg`
         count++
-        resultContent.append(itemL1)      
+        resultContent.append(itemL1)
     });
 }
 
@@ -106,13 +102,11 @@ closeInfo.onclick = () => { (modalInfo.close()) }
 
 const btn_api = document.getElementById('btn_4')
 
-btn_api.onclick=()=>{
-    Swal.fire({
-        title:'Si quieres conocer más sobre las propiedades de los alimentos',
-        showConfirmButton: false,
-        footer: '<a class"linkApi" href="./api_alimentos/api.html" target="blank">Haz click para obtener más información</a>',
-        timer: 5000,
-    })
+btn_api.onclick = (event) => { apiHtml(event) }
+
+
+function apiHtml() {
+    window.open("./api_alimentos/api.html")    
 }
 
 const btn_saludo = document.getElementById('btn_5')
@@ -121,7 +115,7 @@ btn_saludo.onclick = () => {
     Swal.fire({
         html:
             '<div class="div_mje">' +
-            '<p class="mje">Muchas Gracias <br>por tu visita!! <i class="bi bi-heart-pulse-fill"></i></p>' +
+            '<p class="saludo">Muchas Gracias <br>por tu visita!! <i class="bi bi-heart-pulse-fill"></i></p>' +
             '</div>',
         background: 'url(./images/bguno-b.jpg) no-repeat',
         padding: '1em',

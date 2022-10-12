@@ -58,4 +58,3 @@ divModal_info.innerHTML=`
 </div>`
 info.append(divModal_info)
 
-//===SECTION API===
