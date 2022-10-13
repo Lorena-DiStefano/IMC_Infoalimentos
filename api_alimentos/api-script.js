@@ -17,7 +17,7 @@ const cargarAlimentos = async () => {
                 <h3 class="card_title">${alimento.food}</h3>
                 <div class="contPropiedades"><p>${alimento.benefits}</p></div>                    
                 </div>`
-
+                
             contenedor.append(alimentos)
 
         })
