@@ -1,7 +1,40 @@
+//==Section Menú===
+const listaMenu = [
+    {
+        id: 1,
+        nombre: "Calculadora"
+    },
+    {
+        id: 2,
+        nombre: "Lista de resultados"
+    },
+    {
+        id: 3,
+        nombre: "Lo que debes saber"
+    },
+    {
+        id: 4,
+        nombre: "Los alimentos y sus propiedades"
+    },
+    {
+        id: 5,
+        nombre: "Finalizar"
+    }
+]
 
+const content=document.querySelector('.content')
 
-
-//===SECTION CALCULADORA===
+listaMenu.forEach(item=>{
+    let btnMenu=document.createElement('button')
+    btnMenu.type="button"
+    btnMenu.className="btnMenu"
+    btnMenu.id=`btn_${item.id}`
+    btnMenu.innerText= item.nombre
+    item.id===1 && btnMenu.setAttribute('data-bs-toggle','modal')
+    item.id === 1 && btnMenu.setAttribute('data-bs-target','#exampleModal')
+    content.append(btnMenu)
+})
+//===Section Calculadora===
 const ingresaDatos = document.getElementById('datos')
 
 let ingrAltura = document.createElement('div')
@@ -25,13 +58,13 @@ footer_form.innerHTML = `
 <button type="button" id="newCalc" class="btnsPopup">Nuevo Cálculo</button>`
 btnsCalculo.append(footer_form)
 
-//===SECTION RESULTADOS===
+//===Section Resultados===
 const resultados = document.querySelector('.resultados')
 
 const divModal_result = document.createElement('dialog')
-divModal_result.className="div_modal"
-divModal_result.id="modalResult"
-divModal_result.innerHTML=`
+divModal_result.className = "div_modal"
+divModal_result.id = "modalResult"
+divModal_result.innerHTML = `
 <div>
 <h2 class="modal_title">Tus resultados</h2>
 </div>
@@ -39,14 +72,14 @@ divModal_result.innerHTML=`
 <button type="button" class="btnsPopup btnClose" id="closeResult">Cerrar</button>`
 resultados.append(divModal_result)
 
-//===SECTION INFO===
+//===Section Info===
 
 const info = document.querySelector('.info')
 
 const divModal_info = document.createElement('dialog')
-divModal_info.className="div_modal"
-divModal_info.id="modalInfo"
-divModal_info.innerHTML=`
+divModal_info.className = "div_modal"
+divModal_info.id = "modalInfo"
+divModal_info.innerHTML = `
 <div>
 <h2 class="modal_title">Indice de Quetelet</h2>
 <div class="modalContent">
