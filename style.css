@@ -104,7 +104,7 @@ input[type='checkbox'] {
     margin-right: .7em;
     transform: translateY(-2px);
     transition: transform .2s ease-out;
-    
+
 }
 
 .menu-content {
@@ -234,9 +234,7 @@ input[type='checkbox'] {
     padding: 5px;
 }
 
-
 /* Media Query */
-
 @media screen and (min-width:375px) {
     .modalContent {
         font-size: 1.2em;
@@ -244,6 +242,7 @@ input[type='checkbox'] {
 }
 
 @media screen and (min-width:760px) {
+
     .table,
     .label,
     .menu-content {
@@ -258,12 +257,8 @@ input[type='checkbox'] {
         max-width: 60%;
     }
 
-    .div_mje p {
-        font-size: 1.2em;
-    }
-
-    .div_mje .saludo{
-        font-size:1.5em;
+    .div_mje .saludo {
+        font-size: 1.5em;
     }
 }
 

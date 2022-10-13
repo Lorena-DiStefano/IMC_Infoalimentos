@@ -16,14 +16,14 @@ btn_calcular.onclick = (event) => validarDatos(event)
 
 function validarDatos(event) {
     event.preventDefault()
-    
+
     let altura = inputAlt.value
-    altura= altura.replace(',','.')
-    altura=parseFloat(altura).toFixed(2)
+    altura = altura.replace(',', '.')
+    altura = parseFloat(altura).toFixed(2)
 
     let peso = inputPeso.value
-    peso= peso.replace(',','.')
-    peso=parseFloat(peso).toFixed(2)
+    peso = peso.replace(',', '.')
+    peso = parseFloat(peso).toFixed(2)
 
     let imc = (peso / Math.pow(altura, 2)).toFixed(2)
     let pesoMin = (Math.pow(altura, 2) * 18.5).toFixed(2)

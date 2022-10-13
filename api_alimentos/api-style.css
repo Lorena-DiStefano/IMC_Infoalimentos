@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: (3,1fr);
+    grid-template-rows: (3, 1fr);
     min-height: 100vh;
     font-family: 'DM Sans', sans-serif;
     background-color: #2e513c;
@@ -15,10 +15,10 @@
     justify-content: space-around;
 }
 
-h1{
+h1 {
     margin: 1em;
     text-align: center;
-    color: rgb(242,242,242);
+    color: rgb(242, 242, 242);
 }
 
 .cardAlimento {
@@ -68,7 +68,7 @@ h1{
 footer {
     width: 100%;
     height: 3em;
-    color:rgb(242,242,242);
+    color: rgb(242, 242, 242);
     text-align: right;
     font-size: 1.2em;
     font-weight: 800;
