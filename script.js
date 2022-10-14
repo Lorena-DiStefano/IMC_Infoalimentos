@@ -80,7 +80,7 @@ class Resultado {
 const btn_resultado = document.getElementById('btn_2')
 
 const resultContent = document.getElementById('resultContent')
-btn_resultado.onclick = (event) => imprimirResultados(event)
+btn_resultado.onclick = () => imprimirResultados()
 
 let listResulados2 = ""
 
@@ -107,7 +107,7 @@ const closeInfo = document.getElementById('closeInfo')
 closeInfo.onclick = () => { (modalInfo.close()) }
 
 const btn_api = document.getElementById('btn_4')
-btn_api.onclick = (event) => { apiHtml(event) }
+btn_api.onclick = () => { apiHtml() }
 
 function apiHtml() {
     window.open("./api_alimentos/api.html")
