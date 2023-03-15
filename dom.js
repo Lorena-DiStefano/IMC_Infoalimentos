@@ -84,7 +84,7 @@ divModal_info.innerHTML = `
 <div>
 <h2 class="modal_title">Indice de Quetelet</h2>
 <div class="modalContent">
-<p class="info_text">Fue creada en <b>1832</b>.<br>No contempla edad, género, porcentaje de grasa corporal o masa muscular.</p>
+<p class="info_text">Fue creado en <b>1832</b>.<br>No contempla edad, género, porcentaje de grasa corporal o masa muscular; lo que vuelve a su resultado <b>"obsoleto"</b>.</p>
 <p class="info_text">Considerando que el criterio sobre <b>"La Belleza"</b> varía según la época y las culturas....    Mejor hablemos de <b>"SALUD!!"</b></p>
 <p class="info_text">No confundamos <b>"Buena Salud"</b> con cuestiones de <b>"Estética".</b><br>Realizando chequeos periódicos, obtendrás información certera sobre lo que tu organismo necesita.</p>
 </div>

@@ -1,0 +1,122 @@
+[
+  {
+    "benefits": "El huevo es uno de los alimentos más nutritivos y una gran fuente de proteínas. Un solo huevo aporta seis gramos de proteína y 14 nutrientes esenciales, incluyendo vitaminas A, B, D y E, además de ser fuente de calcio, selenio y yodo.",
+    "image": "./img-api/huevo.jpg",
+    "food": "Huevo",
+    "id": "1"
+  },
+  {
+    "benefits": "La leche constituye el mejor aporte de calcio, proteínas y otros nutrientes necesarios para la formación de huesos y dientes. Aporta proteínas de alto valor biológico, hidratos de carbono (lactosa), lípidos, yodo, calcio, fósforo, vitaminas A, B12 y riboflavina.",
+    "image": "./img-api/leche.jpg",
+    "food": "Leche",
+    "id": "2"
+  },
+  {
+    "benefits": "El yogur contiene proteínas muy útiles para el ser humano y con una mayor digestibilidad que la leche. Además, es una buena fuente de vitaminas del grupo B y A y una excelente fuente de minerales como el calcio, fósforo, magnesio y zinc.",
+    "image": "./img-api/yogurt.jpg",
+    "food": "Yogurt",
+    "id": "3"
+  },
+  {
+    "benefits": "El Kiwi es la fruta con mayor contenido de vitamina C además de aportar fibra soluble e insoluble . Contiene nutrientes y fitoquímicos asociados relacionados con el bienestar del sistema inmune, como son la vitamina C, E y K, folatos, carotenoides, potasio y polifenoles.",
+    "image": "./img-api/kiwi.jpg",
+    "food": "Kiwi",
+    "id": "4"
+  },
+  {
+    "benefits": "La manzana contiene flavonoides y polifenoles por lo que es rica en antioxidantes, en vitaminas del grupo B (B1, B2 y B6), vitamina C, fósforo, potasio y calcio. Además, gracias a la presencia de ácido málico y tartárico facilita la digestión de aquellos alimentos que posean un alto contenido en grasas.",
+    "image": "./img-api/manzana.jpg",
+    "food": "Manzana",
+    "id": "5"
+  },
+  {
+    "benefits": "Los cítricos, naranjas, mandarinas, limas, limones y pomelos, son unas de las frutas más cultivadas del mundo. Desde el punto de vista nutricional, los cítricos se caracterizan por ser fuente de vitaminas (vitamina C, ácido fólico, vitamina A..), minerales (potasio, con un ligero efecto diurético) y antioxidantes.",
+    "image": "./img-api/citricos.jpg",
+    "food": "Cítricos",
+    "id": "6"
+  },
+  {
+    "benefits": "La banana contiene más almidón que el plátano, pero también es mucho más rica en calcio, imprescindible para fortalecer dientes, huesos y cabello. En cuanto a las vitaminas, ambas frutas contienen vitamina A, B2, B6, C y riboflavina, en cantidades superiores en el plátano respecto de la banana.",
+    "image": "./img-api/banana.jpg",
+    "food": "Banana",
+    "id": "7"
+  },
+  {
+    "benefits": "El brócoli posee una mayor riqueza en vitaminas y minerales respecto al resto de las crucíferas. Se destaca su contenido en vitamina A (en forma de beta-carotenos), vitamina C, ácido fólico, potasio y hierro. Su origen parece estar ubicado en los países del Mediterráneo oriental.",
+    "image": "./img-api/brocoli.jpg",
+    "food": "Brócoli",
+    "id": "8"
+  },
+  {
+    "benefits": "Espárragos, un vegetal muy diurético. Del espárrago destaca la gran cantidad de antioxidantes, que ayudan a retrasar los signos de envejecimiento celular. Por otro lado, son ricos en vitaminas C y E, aunque una parte se suele perder en la cocción.",
+    "image": "./img-api/esparragos.jpg",
+    "food": "Esparragos",
+    "id": "9"
+  },
+  {
+    "benefits": "El puerro ayuda a combatir el estreñimiento por el efecto mucilaginoso de sus fibras y tiene un ligero efecto laxante por su contenido en magnesio. Variedad de vitaminas. Sobre todo C, E y B6. Además, es una gran fuente de folatos (ácido fólico) y carotenos.",
+    "image": "./img-api/puerro.jpg",
+    "food": "Puerro",
+    "id": "10"
+  },
+  {
+    "benefits": "La palta contiene vitaminas K, C, B5, B6 y E, potasio y ácido fólico. Todos estos benefician ampliamente el sistema muscular, inmunológico y nervioso, lo que implica que se previenen enfermedades e infecciones. El gran aporte de vitamina E lo transforma en un potente antioxidante. ",
+    "image": "./img-api/palta.jpg",
+    "food": "Palta",
+    "id": "11"
+  },
+  {
+    "benefits": " La zanahoria destaca por su alto contenido de vitamina A, que ayuda a mejorar la vista. El consumo habitual de esta hortaliza aporta también una importante cantidad de vitaminas B, C y E, minerales y compuestos antioxidantes y su valor calórico es muy bajo (100 gramos equivalen a unas 33 kcal).",
+    "image": "./img-api/zanahoria.jpg",
+    "food": "Zanahoria",
+    "id": "12"
+  },
+  {
+    "benefits": " El tomate contiene hierro, un mineral muy saludable para el buen estado de la sangre, así como vitamina K que ayuda a controlar la coagulación. De esta manea el tomate ayuda a prevenir enfermedades cardiovasculares. Es una gran fuente de fibra y muchas vitaminas y minerales: vitamina C, colina, vitamina E, potasio, fósforo, magnesio.",
+    "image": "./img-api/tomate.jpg",
+    "food": "Tomate",
+    "id": "13"
+  },
+  {
+    "benefits": " La papa contiene una cantidad moderada de hierro, pero el gran contenido de vitamina C fomenta la absorción de este mineral. Además, este tubérculo aporta vitaminas B1, B3 y B6, y otros minerales como potasio, fósforo y magnesio, así como folato, ácido pantoténico y riboflavina.",
+    "image": "./img-api/papa.jpg",
+    "food": "Papa",
+    "id": "14"
+  },
+  {
+    "benefits": " Además de la fibra, aporta hidratos de carbono, agua, proteínas, sodio, potasio, fósforo, aceites vegetales, calcio, hierro, provitamina A, Niacina, vitamina B1 o tiamina y vitamina B12 o riboflamina. Estas vitaminas proporcionan la base para el metabolismo del cuerpo, la salud del sistema inmunológico y el funcionamiento general de los órganos.",
+    "image": "./img-api/arroz.jpg",
+    "food": "Arroz",
+    "id": "15"
+  },
+  {
+    "benefits": " La avena es un cereal completísimo. Aporta al organismo hidratos de carbono de absorción lenta, fibra, proteínas y minerales como el magnesio, hierro, cobre, zinc, además de vitaminas del grupo B y pequeñas cantidades de calcio y ácido fólico. Su consumo habitual ayuda a disminuir los niveles de colesterol y azúcar en sangre. ",
+    "image": "./img-api/avena.jpg",
+    "food": "Avena",
+    "id": "16"
+  },
+  {
+    "benefits": " Las lentejas destacan por su alto valor energético al tiempo que son un alimento rico en proteínas. Asimismo, son fuente de hidratos de carbono mientras que el contenido en grasas es casi inexistente, por lo que se trata de un alimento idóneo para quienes realizan una alta actividad física, como los deportistas.",
+    "image": "./img-api/lentejas.jpg",
+    "food": "Lentejas",
+    "id": "17"
+  },
+  {
+    "benefits": " Originario de Europa y América, el champiñón es fuente de vitaminas del Grupo B y D además de minerales como el potasio, el fósforo y el hierro, entre otros. Esta composición lo convierte en un posible aliado en la prevención de enfermedades como el cáncer, la diabetes o el deterioro cognitivo. ",
+    "image": "./img-api/champi.jpg",
+    "food": "Champignon",
+    "id": "18"
+  },
+  {
+    "benefits": " Tiene tantas proteínas como la carne, rico en vitaminas y minerales, pero además algunas variedades son también una importante fuente de Omega 3, ácidos grasos beneficiosos para la salud cardiovascular. El pescado es un alimento con propiedades nutricionales que favorecen la salud cardiovascular en todas las edades.",
+    "image": "./img-api/pescado.jpg",
+    "food": "Pescado",
+    "id": "19"
+  },
+  {
+    "benefits": " Son fuente de vitamina B12; esta vitamina nos ayuda a metabolizar proteínas, a formar glóbulos rojos y a darle mantenimiento al sistema nervioso central. Es rica en zinc, que ayuda a protegernos contra el daño oxidativo, a la cicatrización de la piel y para crear hemoglobina. ",
+    "image": "./img-api/carne_roja.jpg",
+    "food": "Carnes Rojas",
+    "id": "20"
+  }
+]

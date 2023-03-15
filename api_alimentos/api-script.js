@@ -1,7 +1,8 @@
 const cargarAlimentos = async () => {
 
     try {
-        const respuesta = await fetch(`https://633e2789c235b0e5751fb150.mockapi.io/alimentos`)
+        //const respuesta = await fetch(`https://633e2789c235b0e5751fb150.mockapi.io/alimentos`)
+        const respuesta = await fetch(`./api.json`)
 
         const data = await respuesta.json()
         let apiNutricion = [...data]

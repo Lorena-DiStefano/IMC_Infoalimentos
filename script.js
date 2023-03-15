@@ -58,6 +58,7 @@ function validarDatos(event) {
         showConfirmButton: false,
         background: 'url(./images/bguno-b.jpg) no-repeat',
         backdrop: true,
+        timer: 2000,
     })
 
     listResultados.push(new Resultado(imc, (diagnostico[Type]), pesoMin, pesoMax))
